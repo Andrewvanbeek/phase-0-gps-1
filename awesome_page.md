@@ -7,7 +7,7 @@
 [I like video games](http://www.nintendo.com/)
 
 ```
-HEY THIS IS CODE
+HEY THIS IS CODE!
 
 ```
 
