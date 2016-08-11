@@ -7,8 +7,13 @@
 [I like video games](http://www.nintendo.com/)
 
 ```
-HEY THIS IS CODE
+HEY THIS IS CODE!
 
 ```
 
 [Hey this is a link to the class info](http://daringfireball.net/projects/markdown/syntax)
+
+
+YO YOU
+
+HEY
