@@ -1,0 +1,67 @@
+def calculate(statement)
+	operators = ["+", "-", "/", "*"]
+	 matharray = statement.split("")
+	 	matharray.map! do |x|
+	 		if operators.include?(x)
+	 			" #{x} "
+	 		else
+	 			x
+	 		end
+	 	end
+	 matharray
+	 matharray = matharray.join("")
+	 matharray = matharray.split(" ")
+	num1 = matharray[0].to_i
+	num2 = matharray[2].to_i
+	operator = matharray[1] 
+	if operator == '+'
+		num1 + num2
+	elsif operator == '-'
+		num1 - num2
+	elsif operator == '/'
+		num1 / num2
+	elsif operator == '*'
+		puts num1 * num2
+	else
+		'your calculations: '
+		return ""
+	end
+end
+
+def printstorecalcs(hash)
+	hash.delete("done")
+	hash.delete(nil)
+	hash.each do |equations, answer|
+		p "#{equations} = #{answer}"
+	end
+end
+#test
+
+
+calculations = 0
+
+savedcalc = {}
+
+x = 0
+
+until calculations == 'done'
+
+puts 'what do you want to calculate? if done write done.'
+
+	calculations = gets.chomp
+
+	answer = calculate(calculations)
+
+	puts answer
+
+	savedcalc[calculations] = answer
+
+	x += 1
+
+end	
+	x -= 1	
+	puts "#{x} calculations performed."
+	printstorecalcs(savedcalc) 
+
+	#zip
+		
