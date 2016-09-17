@@ -1,0 +1,23 @@
+class Random
+def
+
+
+h = { foo:[1,2,[3,4],{a:{bar:42}}] }
+
+
+
+# h[:foo].each_with_index do |x, y|
+# 	puts "#{x} is indexed at #{y} within the #{:foo} hash!" 
+# end
+def fib(num)
+array2 = Array.new(num, 0)
+array2[0] = 0
+array2[1] = 1
+	num.times do |x|
+		array2[2 + x] = array2[x] + array2[x + 1]
+	end
+	array2 = array2.slice(0...num)
+	p array2[-1]	
+end
+
+fib(100)
