@@ -1,0 +1,17 @@
+
+require_relative 'vampiresclass'
+
+describe Employee do
+  let(:vampire) {Employee.new("Drake Cula".upcase)} 
+
+  # it "checks for vampire name" do
+  #   expect(vampire.vampire_name_check).to eq "Def a vampire."
+  # end
+
+
+  it "checks for vampire name" do
+    expect{ vampire.vampire_name_check }.to output("Def a vampire.").to_stdout
+  end
+
+
+end
