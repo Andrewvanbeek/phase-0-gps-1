@@ -1,0 +1,134 @@
+#Program should be able to assess if the employee is a  vamppire through the a some signs
+#input should be name, age, year of birth, preference for health insurance, and etc
+#end of program should be output vampire status or not.
+#will take the attr_accessor approach to variables to minimize code.
+
+#method one is initialize and should have their name as the arguement because the class will be employee.
+#steps the write the name in the method and that name is stored in the instance variable of @name.
+#output is a new instance with @name instance variable.
+
+#method 2 is to evaluate that name to whether they are a vampire.
+#steps if that @name is equal to "Drake Cula" || "Tu Fang" should puts "is definitely a vampire"
+#no input should just evaluate @name.upcase
+#no neccessary output, just nil because more focused on the input statetment
+#output could be possible counter to break a loop
+
+#method 3 is to evaluate a statement and print a statement that they are "probbaly a vampires"
+#if the employee age is wrong(ie if age does not equal 2016 - the year they were born) and hates garlic bread or waives insurance.
+#input no input shoud be using the @age @yob
+#output should be put statement
+
+#method 2 should puts "almost certainly a vampire" 
+# steps evaluates to age wrong, hates garlic bread, and doesn’t want insurance,
+#puts almost certainly a vampire
+#no input
+#puts statement
+
+# Method 4 If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is
+#no input use @age, @garlic bread, @insurance
+
+
+
+
+class Employee
+attr_accessor :garlic_bread, :insurance 
+
+	def initialize(name)
+		@name = name
+		@garlic_bread = ""
+		@insurance = ""
+	end
+
+	def vampire_name_check
+		if @name == "Drake Cula".upcase || @name == "Tu Fang".upcase #if
+			print "Def a vampire."
+		end
+	end
+
+	def almost_certainly_a_vampire(age, yearofb)
+		@age = age.to_i
+		@yearofb = yearofb.to_i
+		@realage = 2016 - @yearofb
+		if @age != @realage && @insurance == "no" && @garlic_bread == "no"
+			puts "Almost certainly a Vampire"
+		end
+	end
+
+
+	def probbably_a_vampire
+		if (@age != @realage && @garlic_bread == "no") || @insurance == "no"
+			puts "probs a vampire"
+		end
+	end
+
+	def results_inconclusive
+		if @age == @realage && @garlic_bread == "yes" && @insurance == "yes"
+			puts "Results are results_inconclusive broheim"
+		end
+	end
+
+end
+
+
+
+puts "How many employees do you want to evaluate?"
+
+employee_eval_num = gets.chomp.to_i
+
+increment = 0
+
+while increment < employee_eval_num
+
+puts "What is your name?"
+
+
+ename = gets.chomp.upcase
+
+	employee = Employee.new(ename)
+
+	employee.vampire_name_check
+
+puts "What is your age?"
+
+	ageofe = gets.chomp
+
+puts "What is your year of birth?"
+	
+	yobe = gets.chomp
+
+puts "Do you like Garlic Bread?  Yes or no?"
+
+	employee.garlic_bread = gets.chomp
+
+puts "Do you want insurance?  Yes or no?"
+
+	employee.insurance = gets.chomp 
+
+	employee.almost_certainly_a_vampire(ageofe, yobe)
+
+	employee.probbably_a_vampire
+
+	employee.results_inconclusive
+
+	increment += 1
+
+end
+
+	# p "hey there"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
